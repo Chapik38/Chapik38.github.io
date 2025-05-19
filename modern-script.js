@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             image: "images/exhibits/foundation-full.jpg",
             shortDescription: "Документы об основании учебного заведения",
             description: "Исторические документы 1950 года, свидетельствующие об основании нашего техникума. Включает устав, первые приказы и фотографии первого здания.",
-            date: "1950 год",
+            date: "1970 год",
             category: "Документы",
             additionalImages: [
                 { url: "images/exhibits/foundation-doc1.jpg", alt: "Первый устав" },
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             additionalImages: []
         }
     ];
+    initSmartHeader();
 
     // Параллакс эффект для герой-секции
     const welcomeSection = document.querySelector('.welcome-section');
@@ -220,6 +221,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+
+// Умное поведение хедера на мобильных
+function initSmartHeader() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    
+    let lastScrollPosition = 0;
+    const mobileBreakpoint = 768;
+    const scrollThreshold = 100; // На сколько нужно проскроллить, чтобы зафиксировать
+    
+    window.addEventListener('scroll', function() {
+        const currentScrollPosition = window.pageYOffset;
+        const isMobile = window.innerWidth <= mobileBreakpoint;
+        
+        if (isMobile) {
+            // На мобильных - фиксируем только после прохождения порога
+            if (currentScrollPosition > scrollThreshold) {
+                header.classList.add('header-fixed');
+            } else {
+                header.classList.remove('header-fixed');
+            }
+            
+            // Прячем при скролле вниз, показываем при скролле вверх
+            if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+                // Скролл вниз
+                header.classList.add('header-hidden');
+            } else {
+                // Скролл вверх
+                header.classList.remove('header-hidden');
+                header.classList.add('header-visible');
+            }
+        } else {
+            // На десктопе - обычное sticky поведение
+            header.classList.remove('header-hidden', 'header-visible', 'header-fixed');
+        }
+        
+        lastScrollPosition = currentScrollPosition;
+    });
+    
+    // Инициализация при загрузке
+    if (window.innerWidth <= mobileBreakpoint && window.pageYOffset > scrollThreshold) {
+        header.classList.add('header-fixed');
+    }
+}
+
+// Вызовите эту функцию в конце вашего DOMContentLoaded:
+
+
     // Интерактивный курсор (опционально)
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
