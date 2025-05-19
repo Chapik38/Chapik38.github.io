@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронный музей - ГБПОУ "Краснокаменский горно-промышленный техникум"</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="http://xn--80a8acb.xn--38-6kcadhwnl3cfdx.xn--p1ai/">
+                    <img src="assets/logo.png" alt="Логотип техникума">
+                </a>
+            </div>
+            <h1>Электронный музей</h1>
+            <nav>
+                <ul>
+                    <li><a href="#history">История</a></li>
+                    <li><a href="#exhibits">Экспонаты</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h2>Добро пожаловать в электронный музей</h2>
+                <p>Здесь вы можете познакомиться с историей нашего техникума и увидеть уникальные экспонаты</p>
+            </div>
+        </section>
+
+        <section id="exhibits" class="exhibits-section">
+            <h2>Экспонаты музея</h2>
+            <div class="exhibits-grid">
+                <!-- Экспонаты будут добавляться динамически через JS -->
+            </div>
+        </section>
+
+        <section id="history" class="history-section">
+            <h2>История техникума</h2>
+            <div class="history-content">
+                <p>Здесь будет размещена историческая справка о техникуме...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Контакты</h3>
+                <p>Адрес: [Адрес техникума]</p>
+                <p>Телефон: [Телефон]</p>
+                <p>Email: [Email]</p>
+            </div>
+            <div class="footer-links">
+                <h3>Ссылки</h3>
+                <ul>
+                    <li><a href="http://xn--80a8acb.xn--38-6kcadhwnl3cfdx.xn--p1ai/">Официальный сайт техникума</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 ГБПОУ "Краснокаменский горно-промышленный техникум". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Лайтбокс для изображений -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script src="js/lightbox.js"></script>
+    <script src="js/modern-script.js"></script>
+</body>
+</html>
