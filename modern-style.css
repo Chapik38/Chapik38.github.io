@@ -1,6 +1,6 @@
 :root {
     --primary: #4361ee;
-    --primary-dark: #3a0ca3;
+    --primary-dark: #38BAFE;
     --secondary: #f72585;
     --accent: #4cc9f0;
     --dark: #212529;
@@ -12,8 +12,6 @@
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
     --neumorph: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
 }
-
-/* Базовые стили */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
@@ -21,8 +19,6 @@ body {
     background-color: var(--light);
     overflow-x: hidden;
 }
-
-/* Современный хедер */
 header {
     background: var(--gradient);
     color: white;
@@ -47,7 +43,18 @@ header {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
 .logo {
     display: flex;
     align-items: center;
@@ -63,8 +70,6 @@ header {
 .logo:hover img {
     transform: scale(1.05);
 }
-
-/* Современная навигация */
 nav ul {
     display: flex;
     gap: 1.5rem;
@@ -100,8 +105,6 @@ nav a:hover::after {
 nav a.active {
     background: rgba(255, 255, 255, 0.15);
 }
-
-/* Герой-секция с параллакс эффектом */
 .welcome-section {
     height: 80vh;
     display: flex;
@@ -121,7 +124,7 @@ nav a.active {
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                url('../images/museum-bg.jpg') center/cover no-repeat;
+                url('../images/museum.jpg') center/cover no-repeat;
     z-index: -1;
     transform: translateZ(-1px) scale(1.2);
 }
@@ -143,8 +146,6 @@ nav a.active {
     margin-bottom: 2rem;
     opacity: 0.9;
 }
-
-/* Кнопка CTA */
 .cta-button {
     display: inline-block;
     background: var(--accent);
@@ -163,8 +164,6 @@ nav a.active {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(76, 201, 240, 0.6);
 }
-
-/* Сетка экспонатов с hover-эффектами */
 .exhibits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -242,8 +241,6 @@ nav a.active {
 .exhibit-item:hover .exhibit-info p {
     color: rgba(255, 255, 255, 0.8);
 }
-
-/* Анимации */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -254,8 +251,6 @@ nav a.active {
         transform: translateY(0);
     }
 }
-
-/* Адаптивность */
 @media (max-width: 992px) {
     .header-container {
         flex-direction: column;
@@ -274,7 +269,7 @@ nav a.active {
 
 @media (max-width: 768px) {
     header {
-        position: relative; /* На мобильных сначала относительное позиционирование */
+        position: relative; 
         top: auto;
     }
     .exhibits-grid {
@@ -334,7 +329,7 @@ nav a.active {
     h1 {
         font-size: 1.2rem;
         margin-bottom: 0;
-        display: none; /* Можно скрыть на мобильных */
+        display: none; 
     }
     
     nav {
